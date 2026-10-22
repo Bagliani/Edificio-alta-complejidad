@@ -1,0 +1,12 @@
+# Material original pesado (PDFs/PNGs de la entrega) — no hace falta para la web,
+# las versiones optimizadas ya están en docs/
+/Renders/
+/Portfolio/
+/Láminas/
+/Plantas/
+/Cortes/
+/Axo/
+/fotos historicas/
+
+# Archivos de entorno / notas locales
+CLAUDE.MD.txt

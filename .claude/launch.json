@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": ["-NoProfile", "-Command", "& { Get-Content -Raw 'serve.ps1' | Invoke-Expression }"],
+      "port": 5500
+    }
+  ]
+}
