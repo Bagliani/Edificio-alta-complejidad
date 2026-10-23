@@ -7,8 +7,8 @@
   --terracotta: #b5572f;
   --green: #8fae7a;
   --ink: #14141c;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-text: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-text: 'Poppins', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,9 +48,11 @@ h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.05; 
   justify-content: space-between;
   align-items: center;
   gap: 0.4rem 1rem;
-  padding: 1.1rem 1.5rem;
+  padding: 1rem 1.5rem;
   color: var(--white);
-  mix-blend-mode: difference;
+  background: rgba(16, 24, 79, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .nav__brand {
   font-family: var(--font-display);
@@ -148,6 +150,22 @@ h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.05; 
 .section__text p { margin-bottom: 1rem; max-width: 480px; color: #4a4a52; }
 .section__media img { border-radius: 2px; }
 
+/* INTENCIÓN (pull-quote) */
+.intention {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--blue);
+  background: var(--stone);
+  max-width: 520px;
+}
+.intention .eyebrow { margin-bottom: 0.5rem; }
+.intention p:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
 .section h2.center { text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 1.5rem; }
 .section__intro {
   max-width: 640px;
@@ -217,9 +235,88 @@ h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.05; 
   color: var(--white);
 }
 .swatch--glass {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(2px);
+  background: rgba(16,24,79,0.08);
+  border: 1px solid rgba(16,24,79,0.2);
+  color: var(--ink);
+}
+
+/* PALETA — tira compacta */
+.section--palette {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  border-top: 1px solid var(--stone);
+}
+.palette__label {
+  font-size: 0.85rem;
+  color: #4a4a52;
+  max-width: 320px;
+}
+.palette__label strong { color: var(--ink); }
+.section--palette .palette { margin-top: 0; }
+.section--palette .swatch { width: 84px; height: 56px; font-size: 0.6rem; }
+
+/* VIDA NOCTURNA */
+.night {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.night__text p { margin-bottom: 1rem; max-width: 480px; }
+.night__soon {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a85c9;
+}
+.night__carousel { height: 480px; }
+
+.marquee-v {
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(180deg, transparent, black 8%, black 92%, transparent);
+}
+.marquee-v__track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  height: max-content;
+  animation: marquee-up 28s linear infinite;
+}
+.marquee-v:hover .marquee-v__track { animation-play-state: paused; }
+
+.night-card {
+  flex-shrink: 0;
+  height: 110px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(45,63,240,0.35), rgba(45,63,240,0.08));
+  border: 1px dashed rgba(159,176,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-v__track { animation: none; }
 }
 
 /* HISTORIA */
@@ -361,6 +458,10 @@ h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.05; 
   .floor__desc { grid-column: 2 / -1; }
   .history { grid-template-columns: 1fr; gap: 2rem; }
   .marquee__track img { width: 260px; height: 180px; }
+  .intention { max-width: none; }
+  .night { grid-template-columns: 1fr; gap: 2rem; }
+  .night__carousel { height: 320px; }
+  .section--palette { flex-direction: column; text-align: center; }
 }
 @media (max-width: 520px) {
   .hero__content { padding: 2rem 1.25rem; }

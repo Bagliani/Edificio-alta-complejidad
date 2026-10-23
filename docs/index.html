@@ -6,7 +6,7 @@
 <title>Edificio de Alta Complejidad — Cerri 998, Barracas / La Boca</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,6 +55,18 @@
           particular y es de todos— donde el comercio, la cultura y el patrimonio conviven a
           cielo abierto.
         </p>
+        <blockquote class="intention">
+          <p class="eyebrow">Intención del equipo</p>
+          <p>
+            El proyecto nace con la intención de prolongar el recorrido turístico de La Boca más
+            allá de Caminito y llevarlo hacia Barracas a lo largo del Riachuelo. Buscamos
+            revitalizar un borde costero hoy relegado y devolverle vida urbana, convirtiéndolo en
+            una continuidad natural del paseo existente. Para lograrlo, el edificio libera por
+            completo su planta baja y genera un gran vacío urbano abierto a la ciudad: una plaza
+            pública que conecta el barrio con el río y reúne usos comerciales, gastronómicos y
+            culturales en un mismo espacio de encuentro.
+          </p>
+        </blockquote>
       </div>
       <div class="section__media">
         <img src="Renders-web/render-plaza-seca.jpg" alt="Plaza seca en planta baja, mercados comunitarios">
@@ -125,6 +137,18 @@
     </div>
   </section>
 
+  <!-- PALETA (versión compacta) -->
+  <section class="section section--palette">
+    <p class="palette__label">Materialidad: <strong>azul cobalto</strong> + hormigón claro + vidrio + vegetación + ladrillo visto del patrimonio.</p>
+    <div class="palette">
+      <div class="swatch" style="background:#2d3ff0"><span>Azul cobalto</span></div>
+      <div class="swatch" style="background:#f4efe4; color:#14141c"><span>Hormigón / crema</span></div>
+      <div class="swatch" style="background:#8fae7a"><span>Vegetación</span></div>
+      <div class="swatch" style="background:#b5572f"><span>Ladrillo patrimonio</span></div>
+      <div class="swatch swatch--glass"><span>Vidrio</span></div>
+    </div>
+  </section>
+
   <!-- PROGRAMA -->
   <section class="section" id="programa">
     <p class="eyebrow center">Programa</p>
@@ -139,59 +163,66 @@
       <button class="floor" data-floor="9">
         <span class="floor__id">09</span>
         <span class="floor__name">Amenities</span>
-        <span class="floor__desc">Gimnasio, SUM y spa: la coronación del edificio, pensada para quienes viven arriba.</span>
+        <span class="floor__desc">Un remate exclusivo para residentes, con gimnasio, spa, SUM y terraza privada frente a la mejor vista del borde costero.</span>
       </button>
       <button class="floor floor--housing" data-floor="6-8">
         <span class="floor__id">06–08</span>
         <span class="floor__name">Viviendas</span>
-        <span class="floor__desc">Unidades residenciales. En las esquinas, patios internos que balconean a triple altura — el gesto que la grilla azul dibuja en la fachada.</span>
+        <span class="floor__desc">Monoambientes, dos y tres ambientes sobre el perímetro, con jardines propios y vistas al Riachuelo, en torno a un patio central lleno de luz.</span>
       </button>
       <button class="floor" data-floor="5">
         <span class="floor__id">05</span>
         <span class="floor__name">Terraza pública</span>
-        <span class="floor__desc">La bisagra del edificio: un mirador abierto a toda la ciudad, entre el trabajo y la vivienda.</span>
+        <span class="floor__desc">Una plaza en altura abierta a la ciudad, a la que se llega por el recorrido de escaleras que envuelve el edificio.</span>
       </button>
       <button class="floor" data-floor="2-4">
         <span class="floor__id">02–04</span>
         <span class="floor__name">Oficinas</span>
-        <span class="floor__desc">Espacios de trabajo para empresas, envueltos por la estructura de columnas expuestas que define todo el edificio.</span>
+        <span class="floor__desc">Plantas libres y flexibles que se adaptan a cada equipo, organizadas alrededor de un patio verde central y con vista al Riachuelo.</span>
       </button>
       <button class="floor" data-floor="1">
         <span class="floor__id">01</span>
         <span class="floor__name">La cinta</span>
-        <span class="floor__desc">Una cinta envolvente se superpone a la planta baja y recorre sus vacíos: de un lado los mercados, del otro los restaurantes. Espacio multicultural con acceso directo a las escaleras perimetrales que suben hasta la terraza pública.</span>
+        <span class="floor__desc">Un paseo elevado sobre la plaza, con locales gastronómicos, un espacio de actividades culturales y gradas que funcionan como escenario urbano, conectado al patrimonio.</span>
       </button>
       <button class="floor floor--pb" data-floor="PB">
         <span class="floor__id">PB</span>
-        <span class="floor__name">Plaza seca</span>
-        <span class="floor__desc">El corazón público del proyecto: mercados comunitarios, locales comerciales, el patrimonio existente y un espacio cultural de escaleras-atrio que desemboca en una tarima. En el medio, el hall del edificio.</span>
+        <span class="floor__name">Plaza pública</span>
+        <span class="floor__desc">Una gran plaza abierta al barrio y al río, con mercado de abastos, comercios y un escenario al aire libre junto al edificio patrimonial.</span>
       </button>
     </div>
   </section>
 
-  <!-- MATERIALIDAD -->
+  <!-- VIDA NOCTURNA -->
   <section class="section section--dark" id="materialidad">
-    <div class="section__grid">
-      <div class="section__text">
-        <p class="eyebrow">Materialidad</p>
-        <h2>Un azul que envuelve</h2>
+    <div class="night">
+      <div class="night__text">
+        <p class="eyebrow">De noche</p>
+        <h2>El edificio no se apaga</h2>
         <p>
-          La estructura de columnas expuestas, las barandas y la grilla que enmarca los patios de
-          triple altura se resuelven en un mismo <strong>azul cobalto</strong>: la identidad
-          visual del edificio. Ese azul vibra contra el hormigón claro de las losas, el vidrio
-          transparente de oficinas y locales, el verde que crece en cada balcón y terraza, y el
-          ladrillo visto del patrimonio que sostiene la memoria del lugar.
+          Cuando cae el sol, la plaza se convierte en escenario: la tarima cultural se activa, los
+          locales gastronómicos de la cinta sacan sus mesas hacia afuera, y el patrimonio se
+          ilumina como memoria viva del lugar. Entre la plaza pública, la terraza del quinto piso
+          y las gradas que envuelven el edificio, Cerri 998 ofrece varios lugares distintos para
+          quedarse: a comer, a ver una banda en vivo, o simplemente a estar.
         </p>
-        <div class="palette">
-          <div class="swatch" style="background:#2d3ff0"><span>Azul cobalto</span></div>
-          <div class="swatch" style="background:#f4efe4; color:#14141c"><span>Hormigón / crema</span></div>
-          <div class="swatch" style="background:#8fae7a"><span>Vegetación</span></div>
-          <div class="swatch" style="background:#b5572f"><span>Ladrillo patrimonio</span></div>
-          <div class="swatch swatch--glass"><span>Vidrio</span></div>
-        </div>
+        <p class="night__soon">Renders nocturnos — próximamente.</p>
       </div>
-      <div class="section__media">
-        <img src="Renders-web/render-fachada-nocturna.jpg" alt="Fachada nocturna, luz cálida contra el azul profundo">
+      <div class="night__carousel">
+        <div class="marquee-v">
+          <div class="marquee-v__track">
+            <div class="night-card">Oferta gastronómica</div>
+            <div class="night-card">Eventos culturales</div>
+            <div class="night-card">Patrimonio iluminado</div>
+            <div class="night-card">Espacios para estar</div>
+            <div class="night-card">La plaza como escenario</div>
+            <div class="night-card">Oferta gastronómica</div>
+            <div class="night-card">Eventos culturales</div>
+            <div class="night-card">Patrimonio iluminado</div>
+            <div class="night-card">Espacios para estar</div>
+            <div class="night-card">La plaza como escenario</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

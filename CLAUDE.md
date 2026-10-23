@@ -10,21 +10,35 @@ zona turística/cultural de La Boca (Caminito) hacia este sector, revitalizando 
 Para eso, el edificio **libera toda la planta baja**, generando un vacío urbano permeable que
 conecta Caminito con el lote y articula distintos usos comerciales y culturales a nivel de calle.
 
-## Programa por piso
-- **Planta baja**: plaza seca como articulador espacial. De un lado, mercados comunitarios; del
-  otro, locales comerciales. Incluye el patrimonio existente (Complejo Barracas, construcción de
-  ladrillo visto preexistente puesta en valor) y un espacio cultural resuelto con unas
-  escaleras-atrio que desembocan en una tarima para actividades culturales. En el centro, el hall
-  del edificio, y hacia el otro lado una plaza secundaria más pequeña.
-- **1er piso**: una "cinta" envolvente se superpone a la planta baja, generando un recorrido sobre
-  los vacíos de doble altura que se generan: de un lado sobre los mercados, del otro sobre los
-  restaurantes. Es un piso pensado como espacio multicultural. Desde acá se accede a las escaleras
-  perimetrales que envuelven todo el edificio y suben hasta la terraza pública del piso 5.
-- **2do a 4to piso**: oficinas para empresas.
-- **5to piso**: terraza pública.
-- **6to a 8vo piso**: viviendas. En las esquinas tienen patios internos que balconean a una triple
-  altura; ese vacío se marca en fachada con una modulación ortogonal azul (grilla/reja).
-- **9no piso**: amenities de las viviendas (gimnasio, SUM, spa).
+## Intención del equipo (texto oficial, usar tal cual en la web)
+"El proyecto nace con la intención de prolongar el recorrido turístico de La Boca más allá de
+Caminito y llevarlo hacia Barracas a lo largo del Riachuelo. Buscamos revitalizar un borde costero
+hoy relegado y devolverle vida urbana, convirtiéndolo en una continuidad natural del paseo
+existente. Para lograrlo, el edificio libera por completo su planta baja y genera un gran vacío
+urbano abierto a la ciudad: una plaza pública que conecta el barrio con el río y reúne usos
+comerciales, gastronómicos y culturales en un mismo espacio de encuentro."
+
+## Programa por piso (descripciones oficiales — usar este texto, no parafrasear)
+- **Planta baja · Plaza pública**: Una gran plaza abierta al barrio y al río, con mercado de
+  abastos, comercios y un escenario al aire libre junto al edificio patrimonial.
+- **1er piso · La cinta**: Un paseo elevado sobre la plaza, con locales gastronómicos, un espacio
+  de actividades culturales y gradas que funcionan como escenario urbano, conectado al patrimonio.
+- **2do a 4to piso · Oficinas**: Plantas libres y flexibles que se adaptan a cada equipo,
+  organizadas alrededor de un patio verde central y con vista al Riachuelo.
+- **5to piso · Terraza pública**: Una plaza en altura abierta a la ciudad, a la que se llega por el
+  recorrido de escaleras que envuelve el edificio.
+- **6to a 8vo piso · Viviendas**: Monoambientes, dos y tres ambientes sobre el perímetro, con
+  jardines propios y vistas al Riachuelo, en torno a un patio central lleno de luz. En las esquinas
+  tienen patios internos que balconean a una triple altura, marcada en fachada con una modulación
+  ortogonal azul (grilla/reja).
+- **9no piso · Amenities**: Un remate exclusivo para residentes, con gimnasio, spa, SUM y terraza
+  privada frente a la mejor vista del borde costero.
+
+**Pendiente:** el usuario quiere que la sección "Programa" de la web sea más interactiva en torno
+a los niveles (inspirado en la lámina "PROGRAMA Y USOS" del Portfolio, con axonometrías por etapa:
+liberar el suelo / trabajo / espacio público elevado / habitar, más un gráfico de barras "Programa
+en altura"). Todavía no dio la especificación final — preguntar/retomar antes de rediseñar esa
+sección a fondo.
 
 ## Búsqueda / idea de diseño
 - Diálogo entre lo industrial-patrimonial existente (ladrillo visto, galpones) y una arquitectura
@@ -73,3 +87,33 @@ Explicar el proyecto y representar fielmente su idea e intención (continuidad t
 Boca, vacío urbano en planta baja, mixtura de usos, diálogo patrimonio-nuevo), usando la paleta de
 colores real del proyecto (azul cobalto + crema/blanco + verdes + acentos terracota) y apoyándose
 visualmente en los renders y en el Portfolio como referencias de mayor calidad.
+
+## Estado del sitio web (docs/)
+El sitio vive en `docs/` (HTML/CSS/JS estático, sin build step) y se publica con **GitHub Pages**
+desde esa misma carpeta: https://bagliani.github.io/Edificio-alta-complejidad/
+Repo: https://github.com/Bagliani/Edificio-alta-complejidad
+
+- Tipografía: **Poppins** (para matchear el Portfolio), cargada desde Google Fonts.
+- `docs/index.html` + `docs/styles.css` + `docs/script.js` son autocontenidos: las imágenes están
+  *dentro* de `docs/` (`docs/Renders-web/` y `docs/fotos-historicas/`), rutas relativas sin `../`.
+  Esto es necesario para que GitHub Pages (fuente = rama `main`, carpeta `/docs`) sirva todo bien.
+- Secciones actuales: Hero → Concepto (+ bloque "Intención del equipo") → Historia (mosaico de
+  fotos de archivo) → Patrimonio → tira compacta de Materialidad/paleta → **De noche** (sección
+  oscura, carrusel vertical infinito con tarjetas placeholder: oferta gastronómica, eventos
+  culturales, patrimonio iluminado, espacios para estar — a la espera de renders nocturnos reales)
+  → Programa (lista de pisos tipo acordeón, pendiente de rediseño más interactivo) → Renders
+  (carrusel horizontal de dos filas que se desliza solo) → Footer/Equipo.
+- Nav fijo con fondo azul oscuro translúcido + blur (NO usar `mix-blend-mode` para el contraste del
+  nav — se probó y se veía mal/ilegible sobre fotos; el fondo sólido translúcido funciona bien
+  sobre cualquier sección).
+- Imágenes originales pesadas (`Renders/`, `Portfolio/`, `Láminas/`, `Plantas/`, `Cortes/`, `Axo/`,
+  `fotos historicas/` con espacio) quedan **fuera del repo git** (`.gitignore`) — son el material
+  de entrega, no hace falta publicarlas. Las versiones optimizadas para web (JPEG comprimido) son
+  las que están en `docs/`.
+- Scripts de utilidad en la raíz (no se suben a `docs/`): `serve.ps1` (servidor local de preview,
+  socket TCP crudo — no usar `HttpListener` porque Windows exige admin para bindear IPs no-localhost;
+  expone también la IP de red local) y `optimize-images.ps1` (recomprime `Renders/*.png` a
+  `docs/Renders-web/*.jpg`, no hay Node/Python instalados en esta máquina así que se usa
+  `System.Drawing` vía PowerShell).
+- Para previsualizar: `.claude/launch.json` tiene una config "site" que corre `serve.ps1` en el
+  puerto 5500.
