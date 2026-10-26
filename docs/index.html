@@ -67,9 +67,9 @@
           </p>
         </blockquote>
       </div>
-      <div class="section__media section__media--stack">
-        <img src="Renders-web/render-implantación.jpg" alt="Implantación urbana del complejo">
-        <img src="Renders-web/render-fachada-principal.jpg" alt="Fachada principal del edificio">
+      <div class="section__media section__media--crossfade">
+        <img class="crossfade__img is-active" src="Renders-web/render-implantación.jpg" alt="Implantación urbana del complejo">
+        <img class="crossfade__img" src="Renders-web/render-fachada-principal.jpg" alt="Fachada principal del edificio">
       </div>
     </div>
   </section>
@@ -177,43 +177,49 @@
       <div class="program-legend__item"><span class="program-legend__swatch program-legend__swatch--private"></span>Privado exterior</div>
     </div>
 
-    <div class="stack" id="stack">
-      <button class="floor floor--private" data-floor="9" style="max-width: 46%">
-        <span class="floor__id">09</span>
-        <span class="floor__name">Amenities</span>
-        <span class="floor__desc">Un remate exclusivo para residentes, con gimnasio, spa, SUM y terraza privada frente a la mejor vista del borde costero.</span>
-        <span class="floor__bar"></span>
-      </button>
-      <button class="floor floor--live" data-floor="6-8" style="max-width: 70%">
-        <span class="floor__id">06–08</span>
-        <span class="floor__name">Viviendas</span>
-        <span class="floor__desc">Monoambientes, dos y tres ambientes sobre el perímetro, con jardines propios y vistas al Riachuelo, en torno a un patio central lleno de luz.</span>
-        <span class="floor__bar"></span>
-      </button>
-      <button class="floor floor--public" data-floor="5" style="max-width: 58%">
-        <span class="floor__id">05</span>
-        <span class="floor__name">Terraza pública</span>
-        <span class="floor__desc">Una plaza en altura abierta a la ciudad, a la que se llega por el recorrido de escaleras que envuelve el edificio.</span>
-        <span class="floor__bar"></span>
-      </button>
-      <button class="floor floor--work" data-floor="2-4" style="max-width: 78%">
-        <span class="floor__id">02–04</span>
-        <span class="floor__name">Oficinas</span>
-        <span class="floor__desc">Plantas libres y flexibles que se adaptan a cada equipo, organizadas alrededor de un patio verde central y con vista al Riachuelo.</span>
-        <span class="floor__bar"></span>
-      </button>
-      <button class="floor floor--public" data-floor="1" style="max-width: 90%">
-        <span class="floor__id">01</span>
-        <span class="floor__name">La cinta</span>
-        <span class="floor__desc">Un paseo elevado sobre la plaza, con locales gastronómicos, un espacio de actividades culturales y gradas que funcionan como escenario urbano, conectado al patrimonio.</span>
-        <span class="floor__bar"></span>
-      </button>
-      <button class="floor floor--public" data-floor="PB" style="max-width: 100%">
-        <span class="floor__id">PB</span>
-        <span class="floor__name">Plaza pública</span>
-        <span class="floor__desc">Una gran plaza abierta al barrio y al río, con mercado de abastos, comercios y un escenario al aire libre junto al edificio patrimonial.</span>
-        <span class="floor__bar"></span>
-      </button>
+    <div class="program-chart">
+      <div class="program-rows" id="programRows">
+        <button class="prog-row prog-row--private" data-floor="9" style="--w: 55%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">09 · Amenities</span>
+        </button>
+        <button class="prog-row prog-row--live" data-floor="6-8" style="--w: 55%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">06–08 · Viviendas</span>
+        </button>
+        <button class="prog-row prog-row--public" data-floor="5" style="--w: 55%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">05 · Terraza pública</span>
+        </button>
+        <button class="prog-row prog-row--work" data-floor="2-4" style="--w: 55%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">02–04 · Oficinas</span>
+        </button>
+        <button class="prog-row prog-row--public" data-floor="1" style="--w: 55%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">01 · La cinta</span>
+        </button>
+        <button class="prog-row prog-row--public prog-row--pb" data-floor="PB" style="--w: 100%">
+          <span class="prog-row__bar"></span>
+          <span class="prog-row__name">PB · Plaza pública</span>
+        </button>
+      </div>
+
+      <div class="program-detail" id="programDetail">
+        <p class="program-detail__hint">Pasá el mouse por un nivel (o tocalo en el celular) para ver el detalle.</p>
+        <p class="program-detail__name"></p>
+        <p class="program-detail__desc"></p>
+      </div>
+    </div>
+
+    <!-- Descripciones: fuente de datos para script.js, no se muestran acá -->
+    <div id="programData" hidden>
+      <div data-floor="9">Un remate exclusivo para residentes, con gimnasio, spa, SUM y terraza privada frente a la mejor vista del borde costero.</div>
+      <div data-floor="6-8">Monoambientes, dos y tres ambientes sobre el perímetro, con jardines propios y vistas al Riachuelo, en torno a un patio central lleno de luz.</div>
+      <div data-floor="5">Una plaza en altura abierta a la ciudad, a la que se llega por el recorrido de escaleras que envuelve el edificio.</div>
+      <div data-floor="2-4">Plantas libres y flexibles que se adaptan a cada equipo, organizadas alrededor de un patio verde central y con vista al Riachuelo.</div>
+      <div data-floor="1">Un paseo elevado sobre la plaza, con locales gastronómicos, un espacio de actividades culturales y gradas que funcionan como escenario urbano, conectado al patrimonio.</div>
+      <div data-floor="PB">Una gran plaza abierta al barrio y al río, con mercado de abastos, comercios y un escenario al aire libre junto al edificio patrimonial.</div>
     </div>
   </section>
 
