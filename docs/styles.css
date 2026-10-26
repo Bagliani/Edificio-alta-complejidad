@@ -303,7 +303,7 @@ strong { color: var(--blue); font-weight: 600; }
 }
 .prog-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) 190px;
   align-items: center;
   gap: 1rem;
   width: 100%;
@@ -326,15 +326,13 @@ strong { color: var(--blue); font-weight: 600; }
 .prog-row--live .prog-row__bar { background: var(--blue-live); }
 .prog-row--private .prog-row__bar { background: var(--cream); border: 1.5px solid var(--blue); }
 
-/* La planta baja es el único nivel con una forma distinta: barra más gruesa. */
-.prog-row--pb .prog-row__bar { height: 34px; }
-
 .prog-row__name {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--blue-ink);
   white-space: nowrap;
+  text-align: right;
 }
 .prog-row:hover .prog-row__bar,
 .prog-row:focus-visible .prog-row__bar,
@@ -610,7 +608,8 @@ strong { color: var(--blue); font-weight: 600; }
   .section__grid, .section__grid--reverse { grid-template-columns: 1fr; direction: ltr; }
   .section__text p { max-width: none; }
   .intention { max-width: none; }
-  .prog-row__name { white-space: normal; font-size: 0.82rem; }
+  .prog-row { grid-template-columns: minmax(0, 1fr) 150px; }
+  .prog-row__name { font-size: 0.78rem; }
   .history { grid-template-columns: 1fr; gap: 2rem; }
   .docs-grid { grid-template-columns: 1fr; }
   .night { grid-template-columns: 1fr; gap: 2rem; }
@@ -629,4 +628,6 @@ strong { color: var(--blue); font-weight: 600; }
   .render-track { padding: 0 1.25rem 0.5rem; }
   .render-slide { width: 220px; }
   .render-slide img { height: 150px; }
+  .prog-row { grid-template-columns: minmax(0, 1fr) 118px; gap: 0.6rem; }
+  .prog-row__name { font-size: 0.68rem; }
 }
