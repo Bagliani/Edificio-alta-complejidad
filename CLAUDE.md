@@ -10,18 +10,26 @@ Sitio estático (HTML/CSS/JS, sin build step) en `docs/`, publicado con **GitHub
 carpeta: https://bagliani.github.io/Edificio-alta-complejidad/
 Repo: https://github.com/Bagliani/Edificio-alta-complejidad
 
-### Estructura de secciones (10, en este orden — ver CLAUDE (2).txt §4)
+### Estructura de secciones (9, en este orden — DESVIADA a propósito de CLAUDE (2).txt §4)
+El usuario pidió fusionar Implantación dentro de Concepto (hablaban de lo mismo: la bisagra entre
+Caminito/La Boca y la Barracas industrial) y sacar del nav las solapas que no son anclas
+principales. Esto YA NO coincide con la lista de 10 secciones del `.txt` — si se vuelve a leer ese
+archivo, no deshacer esta fusión sin confirmar con el usuario primero.
 1. Portada (hero, sin logo — no hay archivo de logo todavía)
-2. Concepto (+ recuadro "Intención del equipo")
+2. Concepto (incluye lo que antes era Implantación: la bisagra Caminito/Riachuelo + tags
+   `.map-note` + recuadro "Intención del equipo")
 3. Historia (mosaico 2×2 de fotos de archivo en blanco y negro)
-4. Implantación
-5. La plaza
-6. Programa por niveles (barras de ancho/color proporcional + leyenda + stepper 01-04)
-7. De noche (fondo `#10184F`, carrusel vertical con tarjetas placeholder — sin renders nocturnos
+4. La plaza
+5. Programa por niveles (barras de ancho/color proporcional + leyenda + stepper 01-04)
+6. De noche (fondo `#10184F`, carrusel vertical con tarjetas placeholder — sin renders nocturnos
    todavía, NO inventar fotos para esto)
-8. Renders · "Recorrer el proyecto" (carrusel horizontal de 2 filas, orden curado específico)
-9. Documentación (plantas/cortes/axonometría, PDFs descargables)
-10. Equipo
+7. Renders · "Recorrer el proyecto" (carrusel horizontal de 2 filas, orden curado específico)
+8. Documentación (plantas/cortes/axonometría, PDFs descargables)
+9. Equipo
+
+Nav (`<nav class="nav__links">`): solo 6 links — Concepto, Historia, Programa, Renders,
+Documentación, Equipo. "La plaza" y "De noche" siguen existiendo como secciones (con su `id`) pero
+a propósito no tienen link en la barra, para que no se sienta sobrecargada.
 
 ### Paleta (hex exactos — ver tabla completa en CLAUDE (2).txt §3)
 Azul `#1656A6` · Azul tinta (texto) `#1D3A7A` · Azul trabajo `#7E9FD3` · Celeste vivienda `#CFDCF0`

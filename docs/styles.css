@@ -202,7 +202,7 @@ strong { color: var(--blue); font-weight: 600; }
   font-size: 0.95rem;
 }
 
-/* IMPLANTACIÓN — mapa esquemático */
+/* MAP-NOTE — tags de ubicación (Concepto) */
 .map-note {
   display: flex;
   gap: 0.75rem;
