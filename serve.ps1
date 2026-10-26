@@ -25,13 +25,20 @@ if ($lanIp) { Write-Host "Red local (celular/otra PC en el mismo WiFi): http://$
 while ($true) {
   $client = $listener.AcceptTcpClient()
   try {
+    $client.ReceiveTimeout = 8000
+    $client.SendTimeout = 8000
     $stream = $client.GetStream()
+    $stream.ReadTimeout = 8000
+    $stream.WriteTimeout = 8000
     $reader = New-Object System.IO.StreamReader($stream, [System.Text.Encoding]::ASCII)
 
     $requestLine = $reader.ReadLine()
+    $headerLines = 0
     while ($true) {
       $line = $reader.ReadLine()
       if ([string]::IsNullOrEmpty($line)) { break }
+      $headerLines++
+      if ($headerLines -gt 100) { break }
     }
 
     $filePath = $null
