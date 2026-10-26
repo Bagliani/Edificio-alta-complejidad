@@ -470,9 +470,6 @@ strong { color: var(--blue); font-weight: 600; }
   from { transform: translateY(0); }
   to { transform: translateY(-50%); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .marquee-v__track { animation: none; }
-}
 
 /* RENDERS — carrusel deslizable */
 .section--gallery { max-width: none; padding-left: 0; padding-right: 0; }

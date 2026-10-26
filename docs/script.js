@@ -1,5 +1,3 @@
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 // Lightbox para cualquier imagen con clase .lightbox-img (renders + historia)
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
@@ -66,7 +64,6 @@ document.querySelectorAll('.render-track').forEach((track) => {
   let autoTimer = null;
 
   function startAuto() {
-    if (reduceMotion) return;
     stopAuto();
     autoTimer = setInterval(() => {
       if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) {
@@ -116,7 +113,7 @@ document.querySelectorAll('.render-track').forEach((track) => {
 // Crossfade de imágenes en Concepto: van alternando solas.
 document.querySelectorAll('.section__media--crossfade').forEach((wrap) => {
   const imgs = wrap.querySelectorAll('.crossfade__img');
-  if (imgs.length < 2 || reduceMotion) return;
+  if (imgs.length < 2) return;
   let current = 0;
   setInterval(() => {
     imgs[current].classList.remove('is-active');
