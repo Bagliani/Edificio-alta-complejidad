@@ -425,12 +425,6 @@ strong { color: var(--blue); font-weight: 600; }
   align-items: center;
 }
 .night__text p { margin-bottom: 1rem; max-width: 480px; }
-.night__soon {
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--blue-soft);
-}
 .night__carousel { height: 480px; }
 
 .marquee-v {
@@ -450,20 +444,28 @@ strong { color: var(--blue); font-weight: 600; }
 .marquee-v:hover .marquee-v__track { animation-play-state: paused; }
 
 .night-card {
+  position: relative;
   flex-shrink: 0;
-  height: 110px;
+  height: 150px;
   border-radius: 2px;
-  background: var(--night-card);
-  border: 1px dashed var(--blue-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
+  overflow: hidden;
+}
+.night-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+.night-card figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.5rem 0.75rem;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   color: var(--white);
+  background: linear-gradient(0deg, rgba(0,0,0,0.78), transparent);
 }
 
 @keyframes marquee-up {
@@ -482,25 +484,24 @@ strong { color: var(--blue); font-weight: 600; }
   gap: 0.75rem;
   margin-top: 1rem;
 }
+.render-track-wrap {
+  overflow: hidden;
+  padding: 0 0 0.5rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+}
 .render-track {
   display: flex;
   gap: 0.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
-  scroll-behavior: smooth;
-  padding: 0 2.5rem 0.5rem;
-  cursor: grab;
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
-  mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
-  scrollbar-width: none;
+  width: max-content;
+  animation: render-marquee-left 110s linear infinite;
 }
-.render-track::-webkit-scrollbar { display: none; }
-.render-track.dragging { cursor: grabbing; scroll-behavior: auto; }
+.render-track--right { animation-name: render-marquee-right; }
+.render-track-wrap:hover .render-track { animation-play-state: paused; }
 
 .render-slide {
   flex: 0 0 auto;
   width: 360px;
-  scroll-snap-align: start;
 }
 .render-slide img {
   width: 100%;
@@ -508,13 +509,20 @@ strong { color: var(--blue); font-weight: 600; }
   object-fit: cover;
   border-radius: 2px;
   cursor: pointer;
-  -webkit-user-drag: none;
-  user-select: none;
 }
 .render-slide figcaption {
   margin-top: 0.5rem;
   font-size: 0.78rem;
   text-align: center;
+}
+
+@keyframes render-marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes render-marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 /* DOCUMENTACIÓN */
